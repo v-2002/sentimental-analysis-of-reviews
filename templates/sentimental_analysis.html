@@ -1,0 +1,65 @@
+<head>
+
+    <script>
+        form{
+            background-color: white;
+            width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            border: 1px solid #ccc;
+            padding: 12px;
+        }
+        .form-heading {
+            font-size: 32px;
+            padding-top: 56px;
+            padding-bottom: 32px;
+            text-align: center;
+        }
+        .input-box{
+            font-size: 18px;
+            padding-bottom: 12px;
+            margin-bottom: 36px;
+            border: 0;
+            border-bottom: 1px solid #ccc;
+            width:100%;
+
+        }
+        .input-wrapper{
+            padding-top: 8px;
+            padding-bottom: 4px;
+            padding-left: 80px;
+            padding-right: 80px;
+        }
+        #btn-submit{
+            background-color: #0056ff;
+            padding-top: 12px;
+            padding-bottom: 12px;
+            padding-left: 24px;
+            padding-right: 24px;
+            font-size: 18px;
+            color: white;
+            border: none;
+
+        }
+
+    </script>
+</head>
+
+{% extends 'base.html' %}
+
+{% block title %} Sentimental Analysis {% endblock %}
+
+{% block content %}
+
+<form method="POST">
+    <form>
+        <h4 class="form-heading"> Product for SA </h4>
+        <div class="input-wrapper">
+            <label for="product" name="product">Enter the product you want analysis on </label>
+            <input type="text" class="input-box" name="product" value="{{ request.form['product'] }}"><br>
+            <input id="btn-submit" type="submit" value="Search">
+        </div>
+
+    </form>
+
+    {% endblock %}

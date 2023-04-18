@@ -1,0 +1,54 @@
+<head>
+    <style>
+		#contact .card:hover i,#contact .card:hover h4{
+	        color: #87d37c;
+        }
+
+    </style>
+</head>
+
+{% extends 'base.html' %}
+
+{% block title %} Sentimental Analysis {% endblock %}
+
+{% block content %}
+<section id="contact">
+    <div class="container">
+        <div>
+            <h3 class="text-center text-uppercase w-50 mp-auto"><b>CONTACT US </b></h3>
+            <p class="text-center w-50 mp-auto">For any queries.. Please reach out to us.</p>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 col-md-6 col-lg-4 my-5">
+                <div class="card border-0">
+                    <div class="card-body text-center">
+                        <i class="fa fa-phone fa-5x mb-3" aria-hidden="true"></i>
+                        <h4 class="text-uppercase mb-5">Call Us</h4>
+                        <p>+9197XXXXXXXX <br> +9198XXXXXXXX</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4 my-5">
+                <div class="card border-0">
+                    <div class="card-body text-center">
+                        <i class="fa fa-map-marker fa-5x mb-3" aria-hidden="true"></i>
+                        <h4 class="text-uppercase mb-5">Office Loaction</h4>
+                        <address>2nd Floor, ABC Building, Pune</address>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4 my-5">
+                <div class="card border-0">
+                    <div class="card-body text-center">
+                        <i class="fa fa-globe fa-5x mb-3" aria-hidden="true"></i>
+                        <h4 class="text-uppercase mb-5"><E></E>mail</h4>
+                        <p>http://al.a.noman1416@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}

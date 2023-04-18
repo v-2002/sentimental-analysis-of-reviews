@@ -1,0 +1,96 @@
+<head>
+    <style>
+        .image-aboutus-banner {
+            background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url("https://images.pexels.com/photos/673649/pexels-photo-673649.jpeg?w=940&h=650&auto=compress&cs=tinysrgb");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            color: #fff;
+            padding-top: 110px;
+            padding-bottom:110px;
+         }
+
+        .image-aboutus-sm-banner {
+            background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url("https://images.pexels.com/photos/631008/pexels-photo-631008.jpeg?w=940&h=650&auto=compress&cs=tinysrgb");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            color: #fff;
+            padding-top: 30px;
+            padding-bottom:30px;
+        }
+        .lg-text {
+            font-size:52px;
+            font-weight: 600;
+            text-transform: none;
+            color:#fff;
+        }
+        .image-aboutus-para {
+            color:#fff;
+        }
+        .bread-bar {
+    background: #f9f9f9;
+    box-shadow: 0 1px 2px rgba(0,0,0,.1);
+    min-height: 40px;
+    height: auto;
+    position: relative;
+    z-index: 555;
+}
+.breadcrumb {
+    background: none;
+    margin: 0;
+    font-weight: 300;
+    padding-left: 0;
+    font-size: 13px;
+}
+.breadcrumb a {
+    color: #999;
+}
+.breadcrumb > .active {
+    color: #666;
+}
+.breadcrumb > li + li::before {
+    content: "\203A";
+    color: #999;
+    padding: 0 8px;
+}
+
+
+    </style>
+</head>
+
+
+{% extends 'base.html' %}
+
+{% block title %} Sentimental Analysis {% endblock %}
+
+{% block content %}
+<div class="image-aboutus-banner" style="margin-top:70px">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="lg-text">About Us</h1>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="aboutus-secktion p-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h1 class="strong">Who we are and<br>what we do</h1>
+                <p class="lead">This is the world's leading portal for<br>easy and quick </p>
+            </div>
+            <div class="col-md-6">
+                <p>Our model results indicate that the proposed techniques are very promising in performing their tasks. We believe that this problem will become increasingly important as more people are buying and expressing their opinions on the Web.
+ Sentimental analysis of reviews is not only useful to common shoppers, but also crucial to product manufacturers.
+
+</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    {% endblock %}

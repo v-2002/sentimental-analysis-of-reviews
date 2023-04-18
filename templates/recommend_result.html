@@ -1,0 +1,44 @@
+
+{% extends "base.html" %}
+
+{% block title %} Recommendeded Product {% endblock %}
+
+{% block content %}
+
+<div class="">
+    <h2 class="py-3">Here are some of the best product recommendation </h2>
+    <table class="py-2">
+        <thead class="py-2" >
+        <tr>
+            <th class="py-2">Based On</th>
+            <th class="py-2">Links</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for key, value in content.items() : %}
+
+        <tr class="py-2">
+            <td>{{ key }}</td>
+            {% for item in value : %}
+            <td>
+                <ul>
+                    <li><a href="{{ item }}"> {{ item }} </a></li>
+                </ul>
+            </td>
+            {% endfor %}
+        </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+</div>
+<nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+        <li class="page-item"><a class="page-link" href="#" style="margin-left: 9px">Buy It</a></li>
+        <li class="page-item me-md-2"><a class="page-link" href="{{ url_for('sentimental_analysis') }}"
+                                         style="margin-left: 9px">Start Analysing</a></li>
+    </ul>
+</nav>
+
+
+{% endblock %}
+

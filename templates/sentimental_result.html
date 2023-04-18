@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %} Sentimental Analysis Result {% endblock %}
+
+{% block content %}
+
+
+<div class="">
+    <h1>Here is your analysed reviews.... </h1>
+    <br>
+    <table class="table">
+        <thead>
+        <tr>
+            <th> Type</th>
+            <th> Result</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for key,value in content.items() : %}
+        <tr>
+            <td>{{ key }}</td>
+            <td>{{ value }}</td>
+            {% endfor %}
+        </tr>
+        </tbody>
+    </table>
+
+
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+            <li class="page-item"><a class="page-link" href="#" style="margin-left: 9px">Buy It</a></li>
+            <li class="page-item me-md-2"><a class="page-link" href="{{ url_for('call_to_scrapper') }}"
+                                             style="margin-left: 9px">New Recommendation</a></li>
+        </ul>
+    </nav>
+</div>
+
+{% endblock %}
