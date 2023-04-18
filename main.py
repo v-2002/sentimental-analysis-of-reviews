@@ -1,6 +1,7 @@
 from time import sleep
 from bs4 import BeautifulSoup
 import requests
+import os
 import pandas as pd
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -15,8 +16,24 @@ from requests.adapters import HTTPAdapter
 
 app = Flask(__name__)
 
+# Set the path to the Chrome driver executable
+chrome_driver_path = os.path.abspath('chromedriver')
+
+# Open a Chrome browser window
+options = webdriver.ChromeOptions()
+options.add_argument('--headless')  # Run in headless mode to avoid opening a visible window
+driver = webdriver.Chrome(executable_path=chrome_driver_path, options=options)
+
+# Run JavaScript code to get the user agent header
+script = "return navigator.userAgent;"
+user_agent_header = driver.execute_script(script)
+
+# Close the browser window
+driver.quit()
+
+
 HEADERS = ({
-    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36',
+    'User-Agent': user_agent_header,
     'Accept-Language': 'en-US, en;q=0.5'})
 
 
