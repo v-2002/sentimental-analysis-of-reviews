@@ -15,26 +15,31 @@ from requests.adapters import HTTPAdapter
 
 
 app = Flask(__name__)
+try:
+    # Set the path to the Chrome driver executable
+    chrome_driver_path = os.path.abspath('chromedriver')
 
-# Set the path to the Chrome driver executable
-chrome_driver_path = os.path.abspath('chromedriver')
+    # Open a Chrome browser window
+    options = webdriver.ChromeOptions()
+    options.add_argument('--headless')  # Run in headless mode to avoid opening a visible window
+    driver = webdriver.Chrome(executable_path=chrome_driver_path, options=options)
 
-# Open a Chrome browser window
-options = webdriver.ChromeOptions()
-options.add_argument('--headless')  # Run in headless mode to avoid opening a visible window
-driver = webdriver.Chrome(executable_path=chrome_driver_path, options=options)
+    # Run JavaScript code to get the user agent header
+    script = "return navigator.userAgent;"
+    user_agent_header = driver.execute_script(script)
 
-# Run JavaScript code to get the user agent header
-script = "return navigator.userAgent;"
-user_agent_header = driver.execute_script(script)
-
-# Close the browser window
-driver.quit()
+    # Close the browser window
+    driver.quit()
 
 
-HEADERS = ({
-    'User-Agent': user_agent_header,
+    HEADERS = ({
+        'User-Agent': user_agent_header,
+        'Accept-Language': 'en-US, en;q=0.5'})
+except:
+    HEADERS = ({
+    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36',
     'Accept-Language': 'en-US, en;q=0.5'})
+
 
 
 def getnextpage(soup, link):
