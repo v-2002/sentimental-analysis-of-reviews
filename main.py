@@ -32,7 +32,7 @@ driver.quit()
 
 
 HEADERS = ({     
-    'User-Agent': user_agent_header,
+    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36',
     'Accept-Language': 'en-US, en;q=0.5'})
 
 
