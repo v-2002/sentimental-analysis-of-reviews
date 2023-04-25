@@ -164,6 +164,11 @@ tensorboard==2.11.0
 tensorboard-data-server==0.6.1
 tensorboard-plugin-wit==1.8.1
 tensorflow==2.11.0
+tensorflow-gpu==2.6.0
+scikit-learn==1.0
+scipy==1.7.1
+opencv-python==4.5.4.58
+tensorflow-cuda-libs==11.0
 #tensorflow-cuda-libs==3.5
 #tensorrt==7.1.3
 tensorflow-estimator==2.11.0
